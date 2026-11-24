@@ -102,7 +102,7 @@ input[type=text]:focus-visible,textarea:focus-visible{outline:3px solid var(--bl
 <body>
 <main class="wrap">
   <h1>Your remote job list</h1>
-  <p class="lede"><span id="total">52</span> remote admin, EA, bookkeeping and payroll roles open to South Africans. All run in SA-friendly hours (UK or Australian time), with no degree needed. Tap Apply, send your CV, then tap Done.</p>
+  <p class="lede"><span id="total">52</span> remote jobs open to South Africans: admin, EA, bookkeeping, payroll, customer support, sales and entry-level roles. All run in SA-friendly hours, with no degree needed. Tap Apply, send your CV, then tap Done.</p>
 
   <section class="love" aria-label="A note for you">
     <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 35C8 26 3 19.5 3 13.2 3 8 7 4 12 4c3.3 0 6.3 1.8 8 4.6C21.7 5.8 24.7 4 28 4c5 0 9 4 9 9.2C37 19.5 32 26 20 35z" fill="#e6261f"/><path d="M11 9.5c-2.4.6-4 2.7-4 5.2" stroke="#fff" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".7"/></svg>
@@ -161,7 +161,9 @@ const CATS={
   ops:{n:"Admin & Ops",c:"var(--blue)"},
   fin:{n:"Bookkeeping & Finance",c:"var(--green)"},
   pay:{n:"Payroll",c:"var(--amber)"},
-  entry:{n:"No experience / commission",c:"var(--black)"}
+  cs:{n:"Customer support",c:"#8b5cf6"},
+  sales:{n:"Sales & setting",c:"var(--black)"},
+  entry:{n:"Entry-level",c:"var(--black)"}
 };
 let jobs=[],checked="";
 
@@ -170,22 +172,22 @@ try{done=JSON.parse(localStorage.getItem("jobsDone")||"{}")}catch(e){done={}}
 const save=()=>{try{localStorage.setItem("jobsDone",JSON.stringify(done))}catch(e){}};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 
-const FILTERS=[["all","All jobs","var(--ink)"],["top","Top picks","var(--amber)"],["study","Study-friendly","var(--blue)"],...Object.entries(CATS).map(([k,v])=>[k,v.n,v.c])];
+const FILTERS=[["all","All jobs","var(--ink)"],["top","Top picks","var(--amber)"],["noexp","No experience needed","var(--green)"],["comm","Commission","var(--amber)"],["study","Study-friendly","var(--blue)"],...Object.entries(CATS).filter(([k])=>k!=="entry").map(([k,v])=>[k,v.n,v.c])];
 let filter="all";
 const chips=document.getElementById("chips"),list=document.getElementById("list"),hide=document.getElementById("hide");
 chips.innerHTML=FILTERS.map(([k,n,c])=>`<button class="chip" data-f="${k}" style="--c:${c}" aria-pressed="${k===filter}"><i></i>${esc(n)}</button>`).join("");
 
 function render(){
-  const sorted=jobs.filter(j=>filter==="all"||(filter==="top"?j.top:filter==="study"?j.study||/0[5-6]:00|Flexible|part/i.test(j.h):j.cat===filter))
+  const sorted=jobs.filter(j=>filter==="all"||(filter==="top"?j.top:filter==="noexp"?j.noexp:filter==="comm"?j.comm:filter==="study"?j.study||/0[5-6]:00|Flexible|part/i.test(j.h):j.cat===filter))
     .filter(j=>!(hide.checked&&done[j.u]))
     .sort((a,b)=>(b.top||0)-(a.top||0)||b.m-a.m);
   document.getElementById("showing").textContent=sorted.length+" showing";
-  list.innerHTML=sorted.length?sorted.map(j=>{const c=CATS[j.cat].c,d=!!done[j.u];return `<li class="stop${d?" is-done":""}" style="--c:${c}"><span class="dot"></span>
+  list.innerHTML=sorted.length?sorted.map(j=>{const c=(CATS[j.cat]||CATS.ops).c,d=!!done[j.u];return `<li class="stop${d?" is-done":""}" style="--c:${c}"><span class="dot"></span>
    <article class="card"><div><p class="t">${esc(j.t)}</p><p class="co">${esc(j.co)}</p></div>
    <div class="match">${j.m}%<small>match</small></div>
    <div class="meta"><span><b>Hours</b> ${esc(j.h)}</span><span><b>Pay</b> ${esc(j.p)}${/See ad|Set per|Contract|Rand|Rate/.test(j.p)?"":" /mo"}</span></div>
    <p class="why">${esc(j.why)}</p>
-   ${j.top||j.study||j.chk||isNew(j)?`<div class="tags">${isNew(j)?'<span class="tag new">New</span>':""}${j.top?'<span class="tag top">Top pick</span>':""}${j.study||/0[5-6]:00|Flexible|part/i.test(j.h)?'<span class="tag">Study-friendly</span>':""}${j.chk?'<span class="tag chk">Confirm details</span>':""}</div>`:""}
+   ${j.top||j.study||j.chk||j.noexp||j.comm||isNew(j)?`<div class="tags">${isNew(j)?'<span class="tag new">New</span>':""}${j.top?'<span class="tag top">Top pick</span>':""}${j.noexp?'<span class="tag">No experience needed</span>':""}${j.comm?'<span class="tag">Commission</span>':""}${j.study||/0[5-6]:00|Flexible|part/i.test(j.h)?'<span class="tag">Study-friendly</span>':""}${j.chk?'<span class="tag chk">Confirm details</span>':""}</div>`:""}
    <div class="act"><button class="ghost tailor" data-u="${esc(j.u)}" type="button">Tailor CV</button><a class="btn" href="${esc(j.u)}" target="_blank" rel="noopener">Apply</a><button class="done" data-id="${esc(j.u)}" aria-pressed="${d}">${d?"Done ✓":"Done"}</button></div>
    </article></li>`}).join(""):`<li class="empty">All done in this list. Pick another line above.</li>`;
   const n=jobs.filter(j=>done[j.u]).length;
@@ -208,8 +210,10 @@ const SUM={
  ops:"Remote operations and admin coordinator with 3+ years of experience keeping teams organised. Processes, scheduling, records and project tracking in ClickUp, monday.com and Notion, plus bookkeeping and payroll.",
  fin:"Remote bookkeeper with 3+ years on Xero, Sage and QuickBooks. Invoicing, reconciliations, supplier payments and month-end, plus payroll for about 15 staff and SARS and CIPC compliance.",
  pay:"Payroll administrator with 3+ years of experience running monthly payroll for about 15 employees, with SARS submissions and CIPC compliance on Sage, Xero and QuickBooks.",
+ cs:"Client-focused remote professional with 3+ years of experience handling client queries, coordination and follow-up. Calm, clear written communication and organised record-keeping.",
+ sales:"Organised, client-facing remote professional with 3+ years in admin and client coordination. Keen to grow in sales and appointment setting.",
  entry:"Organised, client-facing remote professional with 3+ years in admin and client coordination. Keen to learn outbound calling and appointment setting fast."};
-const AREA={ea:"executive and virtual assistance",ops:"operations and administration",fin:"bookkeeping and finance admin",pay:"payroll administration",entry:"admin and client coordination"};
+const AREA={ea:"executive and virtual assistance",ops:"operations and administration",fin:"bookkeeping and finance admin",pay:"payroll administration",cs:"client support and coordination",sales:"client coordination",entry:"admin and client coordination"};
 const SETUP="Home office set up for international hours: fibre, laptop, second screen and UPS backup.";
 function basic(j,cv,name){
   const tailored="PROFILE\n"+SUM[j.cat]+"\n"+SETUP+"\n\n"+cv;

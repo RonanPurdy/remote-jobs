@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "43 4 * * *" # 06:43 South Africa time, every day
   workflow_dispatch: {}   # lets you run it by hand from the Actions tab
+  push:
+    branches: [main]
+    paths: ["scripts/**", ".github/workflows/**"]
 
 permissions:
   contents: write
