@@ -1,0 +1,36 @@
+name: Update job list
+
+on:
+  schedule:
+    - cron: "43 4 * * *" # 06:43 South Africa time, every day
+  workflow_dispatch: {}   # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-jobs
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Refresh jobs.json
+        run: node scripts/update-jobs.mjs
+      - name: Save changes
+        run: |
+          if git diff --quiet -- jobs.json; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "job-list-bot"
+          git config user.email "job-list-bot@users.noreply.github.com"
+          git add jobs.json
+          git commit -m "Update job list $(TZ=Africa/Johannesburg date +%F)"
+          git push

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Remote Jobs To Apply</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: practical, encouraging, zero fluff — a to-do list you finish today
+   IDEA: a metro map; each job type is a coloured line, each job a station you "stop at" by applying
+   PICTURE: the live list itself, threaded on thick coloured lines, with a progress line at the top
+   COLOUR and TYPE: white, metro red/blue/amber/green + black; Figtree 800 + Figtree
+   LAYOUT: modest title, progress route, line-filter chips, then the stations in one calm column */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0e1116);--ink:light-dark(#101418,#eef1f5);--mute:light-dark(#5a636e,#9aa4b1);
+--rule:light-dark(#e6e9ee,#232a33);--card:light-dark(#ffffff,#151a21);--soft:light-dark(#f4f6f9,#1a2029);
+--red:#e6261f;--blue:#0a5cff;--amber:#ffb400;--green:#00a05a;--black:light-dark(#101418,#cfd6df)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Figtree,system-ui,sans-serif;overflow-x:clip}
+.wrap{max-width:860px;margin:0 auto;padding:clamp(24px,4vw,48px) max(5vw,16px) 64px}
+h1{font-weight:800;font-size:clamp(32px,6vw,48px);line-height:1.05;margin:0 0 10px;text-wrap:balance;letter-spacing:-.02em}
+.lede{color:var(--mute);margin:0 0 24px;max-width:62ch}
+.route{display:flex;align-items:center;gap:14px;margin:0 0 22px}
+.track{flex:1;height:12px;border-radius:99px;background:var(--soft);position:relative;overflow:hidden}
+.fill{position:absolute;inset:0 auto 0 0;width:0;border-radius:99px;background:linear-gradient(90deg,var(--red),var(--amber) 40%,var(--green));transition:width .5s ease}
+.count{font-weight:800;font-size:20px;white-space:nowrap}
+.count small{font-weight:500;font-size:14px;color:var(--mute)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 26px}
+.step{background:var(--soft);border-radius:14px;padding:14px 16px;font-size:15px}
+.step b{display:block;font-weight:800;margin-bottom:2px}
+.step a{color:var(--blue);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px;position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:2}
+.chip{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:99px;border:2px solid var(--rule);background:var(--card);color:var(--ink);font:600 15px Figtree,system-ui,sans-serif;cursor:pointer}
+.chip i{width:12px;height:12px;border-radius:50%;background:var(--c,var(--black))}
+.chip[aria-pressed=true]{border-color:var(--ink);background:var(--ink);color:var(--bg)}
+.chip:focus-visible,.btn:focus-visible,.done:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.opts{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 8px;color:var(--mute);font-size:14px}
+.opts label{display:inline-flex;align-items:center;gap:8px;min-height:44px;cursor:pointer}
+.opts input{width:20px;height:20px;accent-color:var(--green)}
+.line{list-style:none;margin:0;padding:0;position:relative}
+.stop{position:relative;padding:0 0 14px 44px}
+.stop::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:8px;background:var(--c)}
+.stop:first-child::before{top:26px}.stop:last-child::before{bottom:calc(100% - 26px)}
+.dot{position:absolute;left:6px;top:14px;width:24px;height:24px;border-radius:50%;background:var(--bg);border:6px solid var(--c);z-index:1}
+.stop.is-done .dot{background:var(--c)}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;align-items:start}
+.is-done .card{opacity:.55}
+.t{font-weight:800;font-size:18px;line-height:1.25;margin:0}
+.co{color:var(--mute);font-size:15px;margin:0}
+.meta{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;margin-top:4px}
+.meta span{white-space:nowrap}
+.meta b{font-weight:600}
+.why{grid-column:1/-1;font-size:15px;margin:2px 0 0}
+.tags{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:13px;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--soft)}
+.tag.top{background:var(--amber);color:#101418}
+.tag.new{background:var(--green);color:#fff}
+.tag.chk{color:var(--mute)}
+.match{font-weight:800;font-size:22px;text-align:right;line-height:1}
+.match small{display:block;font-size:12px;font-weight:500;color:var(--mute)}
+.act{grid-column:1/-1;display:flex;gap:10px;margin-top:8px}
+.btn{flex:1;display:inline-flex;justify-content:center;align-items:center;min-height:48px;border-radius:12px;background:var(--ink);color:var(--bg);font-weight:800;font-size:16px;text-decoration:none}
+.btn:hover{background:var(--c)}
+.done{min-height:48px;padding:0 16px;border-radius:12px;border:2px solid var(--rule);background:var(--card);color:var(--ink);font:600 15px Figtree,system-ui,sans-serif;cursor:pointer;white-space:nowrap}
+.is-done .done{border-color:var(--green);color:var(--green)}
+.love{position:relative;background:light-dark(#fff3f2,#2a1517);border-radius:20px;padding:22px 22px 20px 78px;margin:0 0 26px;animation:rise .7s ease both}
+.love svg{position:absolute;left:20px;top:22px;width:40px;height:40px}
+.love h2{font-weight:800;font-size:24px;line-height:1.2;margin:0 0 8px;color:var(--red)}
+.love p{margin:0 0 10px;font-size:17px;max-width:60ch}
+.love .sig{font-weight:800;margin:14px 0 0;color:var(--red)}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media(max-width:600px){.love{padding:70px 18px 18px}.love svg{left:18px;top:20px}}
+@media(prefers-reduced-motion:reduce){.love{animation:none}}
+.cvbox{background:var(--soft);border-radius:16px;padding:18px;margin:0 0 26px}
+.cvbox h2,.dlg h2{font-weight:800;font-size:22px;line-height:1.2;margin:0 0 4px}
+.cvbox p{margin:0 0 12px;color:var(--mute);font-size:15px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:end;margin-bottom:10px}
+.cvbox label,.dlg label{display:block;font-weight:600;font-size:14px;margin:0 0 4px}
+input[type=text],textarea{width:100%;font:16px/1.5 Figtree,system-ui,sans-serif;color:var(--ink);background:var(--card);border:2px solid var(--rule);border-radius:12px;padding:10px 12px}
+textarea{min-height:160px;resize:vertical}
+input[type=text]:focus-visible,textarea:focus-visible{outline:3px solid var(--blue);outline-offset:1px}
+.saved{font-size:14px;color:var(--green);font-weight:600;min-height:20px}
+.ghost{min-height:48px;padding:0 16px;border-radius:12px;border:2px solid var(--ink);background:transparent;color:var(--ink);font:700 15px Figtree,system-ui,sans-serif;cursor:pointer;white-space:nowrap}
+.ghost:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.dlg{width:min(720px,94vw);max-height:90vh;border:0;border-radius:18px;padding:0;background:var(--bg);color:var(--ink)}
+.dlg::backdrop{background:rgba(10,14,20,.55)}
+.dlg .in{padding:20px;display:grid;gap:14px}
+.dlg .sub{color:var(--mute);margin:0;font-size:15px}
+.dlg textarea{min-height:220px}
+.out{display:grid;gap:6px}
+.outh{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.status{font-size:14px;color:var(--mute);min-height:20px}
+.x{position:sticky;top:0;display:flex;justify-content:flex-end;padding:10px 10px 0;background:var(--bg)}
+.empty{padding:32px;text-align:center;color:var(--mute);background:var(--soft);border-radius:16px}
+.foot{margin-top:32px;font-size:14px;color:var(--mute);border-top:1px solid var(--rule);padding-top:16px}
+@media(max-width:600px){.act{flex-wrap:wrap}.act .btn{flex-basis:100%;order:-1}.steps{grid-template-columns:1fr}.card{padding:14px}.t{font-size:17px}.stop{padding-left:36px}.stop::before{left:10px}.dot{left:2px}}
+@media(prefers-reduced-motion:reduce){.fill{transition:none}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>Your remote job list</h1>
+  <p class="lede"><span id="total">52</span> remote admin, EA, bookkeeping and payroll roles open to South Africans. All run in SA-friendly hours (UK or Australian time), with no degree needed. Tap Apply, send your CV, then tap Done.</p>
+
+  <section class="love" aria-label="A note for you">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 35C8 26 3 19.5 3 13.2 3 8 7 4 12 4c3.3 0 6.3 1.8 8 4.6C21.7 5.8 24.7 4 28 4c5 0 9 4 9 9.2C37 19.5 32 26 20 35z" fill="#e6261f"/><path d="M11 9.5c-2.4.6-4 2.7-4 5.2" stroke="#fff" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".7"/></svg>
+    <h2>Before you start, my love</h2>
+    <p>I'm so proud of you. You're studying, you're building a future, and you already bring more experience than most people applying for these jobs. Never doubt how capable you are.</p>
+    <p>Every time you tap Apply, you're one step closer. Every "no" just clears the way for the right "yes". Take it one job at a time, and I'll be right beside you cheering for every single one.</p>
+    <p>Whatever happens with any of these, you're already my favourite person in the world.</p>
+    <p class="sig">I love you, always. xx</p>
+  </section>
+
+  <div class="route" aria-live="polite">
+    <div class="track"><div class="fill" id="fill"></div></div>
+    <div class="count" id="count">0 <small>of 52 applied</small></div>
+  </div>
+
+  <div class="steps">
+    <div class="step"><b>1. Do this first</b>Register once at <a href="https://remoterecruitment.co.uk/candidates/">Remote Recruitment</a>. Most jobs below are theirs, and they review profiles within 48 hours.</div>
+    <div class="step"><b>2. Start with the gold tags</b>Top picks are the closest match to your experience. Aim for 8 today and 5 a day after.</div>
+    <div class="step"><b>3. Never pay</b>No real job asks for a fee, training money or equipment payment. Skip any that does.</div>
+  </div>
+
+  <section class="cvbox" aria-labelledby="cvh">
+    <h2 id="cvh">Your CV, saved once</h2>
+    <p>Paste your CV here once. It stays saved on this phone. On any job, tap "Tailor CV" to get a version of your CV and a cover note written for that role, ready to copy.</p>
+    <div class="row"><div><label for="nm">Your name</label><input type="text" id="nm" autocomplete="name"></div><button class="ghost" id="cvsave" type="button">Save</button></div>
+    <label for="cv">Your CV (paste the full text)</label>
+    <textarea id="cv" placeholder="Paste your CV text here: copy everything from your Word or PDF CV."></textarea>
+    <div class="saved" id="cvmsg" aria-live="polite"></div>
+  </section>
+
+  <div class="chips" id="chips" role="toolbar" aria-label="Filter jobs"></div>
+  <div class="opts">
+    <span id="showing"></span>
+    <label><input type="checkbox" id="hide"> Hide jobs I've done</label>
+  </div>
+  <ol class="line" id="list"></ol>
+
+  <p class="foot">List checked <span id="checked">24 November 2026</span>. Closed jobs are removed and new ones added every morning. Some agency ads stay up after the role is filled. If a link says closed, skip it and move on. "Confirm hours" means the ad is live, but check the hours on the listing before applying. SAST times assume UK winter time (09:00 UK = 11:00 SAST).</p>
+</main>
+<dialog class="dlg" id="dlg" aria-labelledby="dt">
+  <div class="x"><button class="ghost" id="dclose" type="button">Close</button></div>
+  <div class="in">
+    <div><h2 id="dt"></h2><p class="sub" id="dco"></p></div>
+    <div class="status" id="dst" aria-live="polite"></div>
+    <div class="out"><div class="outh"><label for="ocv">CV for this job</label><button class="ghost" data-copy="ocv" type="button">Copy CV</button></div><textarea id="ocv"></textarea></div>
+    <div class="out"><div class="outh"><label for="ocl">Cover note</label><button class="ghost" data-copy="ocl" type="button">Copy note</button></div><textarea id="ocl"></textarea></div>
+    <button class="ghost" id="dredo" type="button" hidden>Rewrite with Claude</button>
+  </div>
+</dialog>
+
+
+<script>
+{
+const CATS={
+  ea:{n:"EA, PA & VA",c:"var(--red)"},
+  ops:{n:"Admin & Ops",c:"var(--blue)"},
+  fin:{n:"Bookkeeping & Finance",c:"var(--green)"},
+  pay:{n:"Payroll",c:"var(--amber)"},
+  entry:{n:"No experience / commission",c:"var(--black)"}
+};
+let jobs=[],checked="";
+
+let done={};
+try{done=JSON.parse(localStorage.getItem("jobsDone")||"{}")}catch(e){done={}}
+const save=()=>{try{localStorage.setItem("jobsDone",JSON.stringify(done))}catch(e){}};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+const FILTERS=[["all","All jobs","var(--ink)"],["top","Top picks","var(--amber)"],["study","Study-friendly","var(--blue)"],...Object.entries(CATS).map(([k,v])=>[k,v.n,v.c])];
+let filter="all";
+const chips=document.getElementById("chips"),list=document.getElementById("list"),hide=document.getElementById("hide");
+chips.innerHTML=FILTERS.map(([k,n,c])=>`<button class="chip" data-f="${k}" style="--c:${c}" aria-pressed="${k===filter}"><i></i>${esc(n)}</button>`).join("");
+
+function render(){
+  const sorted=jobs.filter(j=>filter==="all"||(filter==="top"?j.top:filter==="study"?j.study||/0[5-6]:00|Flexible|part/i.test(j.h):j.cat===filter))
+    .filter(j=>!(hide.checked&&done[j.u]))
+    .sort((a,b)=>(b.top||0)-(a.top||0)||b.m-a.m);
+  document.getElementById("showing").textContent=sorted.length+" showing";
+  list.innerHTML=sorted.length?sorted.map(j=>{const c=CATS[j.cat].c,d=!!done[j.u];return `<li class="stop${d?" is-done":""}" style="--c:${c}"><span class="dot"></span>
+   <article class="card"><div><p class="t">${esc(j.t)}</p><p class="co">${esc(j.co)}</p></div>
+   <div class="match">${j.m}%<small>match</small></div>
+   <div class="meta"><span><b>Hours</b> ${esc(j.h)}</span><span><b>Pay</b> ${esc(j.p)}${/See ad|Set per|Contract|Rand|Rate/.test(j.p)?"":" /mo"}</span></div>
+   <p class="why">${esc(j.why)}</p>
+   ${j.top||j.study||j.chk||isNew(j)?`<div class="tags">${isNew(j)?'<span class="tag new">New</span>':""}${j.top?'<span class="tag top">Top pick</span>':""}${j.study||/0[5-6]:00|Flexible|part/i.test(j.h)?'<span class="tag">Study-friendly</span>':""}${j.chk?'<span class="tag chk">Confirm details</span>':""}</div>`:""}
+   <div class="act"><button class="ghost tailor" data-u="${esc(j.u)}" type="button">Tailor CV</button><a class="btn" href="${esc(j.u)}" target="_blank" rel="noopener">Apply</a><button class="done" data-id="${esc(j.u)}" aria-pressed="${d}">${d?"Done ✓":"Done"}</button></div>
+   </article></li>`}).join(""):`<li class="empty">All done in this list. Pick another line above.</li>`;
+  const n=jobs.filter(j=>done[j.u]).length;
+  document.getElementById("count").innerHTML=`${n} <small>of ${jobs.length} applied</small>`;
+  document.getElementById("fill").style.width=(n/jobs.length*100)+"%";
+}
+chips.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;filter=b.dataset.f;chips.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
+list.addEventListener("click",e=>{const b=e.target.closest(".done");if(!b)return;const id=b.dataset.id;if(done[id])delete done[id];else done[id]=1;save();render()});
+hide.addEventListener("change",render);
+
+const $=id=>document.getElementById(id);
+const get=k=>{try{return localStorage.getItem(k)||""}catch(e){return""}};
+const put=(k,v)=>{try{localStorage.setItem(k,v);return true}catch(e){return false}};
+$("cv").value=get("cvText");$("nm").value=get("cvName");
+if(get("cvText"))$("cvmsg").textContent="CV saved. Tap Tailor CV on any job.";
+$("cvsave").addEventListener("click",()=>{const ok=put("cvText",$("cv").value.trim())&&put("cvName",$("nm").value.trim());
+  $("cvmsg").textContent=ok?($("cv").value.trim()?"CV saved. Tap Tailor CV on any job.":"Cleared."):"Couldn't save on this browser. Keep a copy of your CV somewhere else.";});
+const SUM={
+ ea:"Remote Executive and Virtual Assistant with 3+ years of experience supporting busy leaders across time zones. Diary and inbox management, travel, documents and follow-ups, backed by hands-on bookkeeping and payroll.",
+ ops:"Remote operations and admin coordinator with 3+ years of experience keeping teams organised. Processes, scheduling, records and project tracking in ClickUp, monday.com and Notion, plus bookkeeping and payroll.",
+ fin:"Remote bookkeeper with 3+ years on Xero, Sage and QuickBooks. Invoicing, reconciliations, supplier payments and month-end, plus payroll for about 15 staff and SARS and CIPC compliance.",
+ pay:"Payroll administrator with 3+ years of experience running monthly payroll for about 15 employees, with SARS submissions and CIPC compliance on Sage, Xero and QuickBooks.",
+ entry:"Organised, client-facing remote professional with 3+ years in admin and client coordination. Keen to learn outbound calling and appointment setting fast."};
+const AREA={ea:"executive and virtual assistance",ops:"operations and administration",fin:"bookkeeping and finance admin",pay:"payroll administration",entry:"admin and client coordination"};
+const SETUP="Home office set up for international hours: fibre, laptop, second screen and UPS backup.";
+function basic(j,cv,name){
+  const tailored="PROFILE\n"+SUM[j.cat]+"\n"+SETUP+"\n\n"+cv;
+  const co=j.co.replace(/\s*\(.*\)\s*/,"").trim();
+  const note=`Dear Hiring Team,
+
+I'd like to apply for the ${j.t} role${co?" with "+co:""}. I have over three years of remote experience in ${AREA[j.cat]}. I work daily in Xero, Sage, QuickBooks, Microsoft 365 and Google Workspace, and I handle SARS and CIPC compliance.
+
+I haven't supported UK clients directly yet. I have worked across time zones with a US client, and I learn new processes quickly. My home office is set up for ${j.h.replace(/ SAST/,"")} working, with fibre, a second screen and UPS backup.
+
+My CV is attached. I'd welcome a short call.
+
+Kind regards,
+${name||"[Your name]"}`;
+  return {cv:tailored,note};
+}
+let sample=null,cur=null,ctl=null;
+function show(j,res,msg){$("ocv").value=res.cv;$("ocl").value=res.note;$("dst").textContent=msg;}
+async function ai(j,cv,name){
+  if(!sample)return;
+  if(ctl)ctl.abort();ctl=new AbortController();const my=ctl;
+  $("dredo").hidden=true;$("dst").textContent="Claude is tailoring your CV for this job…";
+  const prompt=`You tailor a candidate's CV to one job. Rules: never invent employers, dates, qualifications, tools, numbers or experience that are not in her CV. Only reorder, reword and emphasise. Use British English, plain text, with clear section headings in capitals and no markdown symbols. Start with a 3-line PROFILE aimed at this exact job. Put the most relevant experience and tools first. Keep it to about 2 pages.
+Then write a cover note of 120 to 170 words, signed "${name||"[Your name]"}". It must state honestly that she has not yet supported UK clients directly (if the role is UK-based) and that she is keen to learn, and mention her home office (fibre, second screen, UPS backup).
+
+JOB: ${j.t} at ${j.co}. Hours: ${j.h}. Pay: ${j.p}. Notes: ${j.why}
+
+HER CV:
+${cv}
+
+Reply with exactly this format:
+===CV===
+(the tailored CV)
+===COVER===
+(the cover note)`;
+  try{
+    const r=await sample(prompt,{signal:my.signal,modelTier:"default",onText:({text})=>{if(cur===j&&my===ctl)$("dst").textContent="Writing… "+Math.min(99,Math.round(text.length/40))+"%"}});
+    if(my!==ctl||cur!==j)return;
+    const t=r.text||"",a=t.indexOf("===CV==="),b=t.indexOf("===COVER===");
+    if(a<0||b<0)throw{message:"format"};
+    const res={cv:t.slice(a+8,b).trim(),note:t.slice(b+11).trim()};
+    put("tailor:"+j.u,JSON.stringify(res));show(j,res,"Tailored by Claude. Read it through, then copy.");
+  }catch(e){if(e&&e.name==="AbortError")return;
+    $("dst").textContent=e&&e.code==="rate_limited"?"Claude is busy. The quick version below is ready to use; try again in a minute.":"Using the quick version below. It's ready to copy.";}
+  $("dredo").hidden=false;
+}
+list.addEventListener("click",e=>{const b=e.target.closest(".tailor");if(!b)return;
+  const j=jobs.find(x=>x.u===b.dataset.u);if(!j)return;
+  const cv=$("cv").value.trim(),name=$("nm").value.trim();
+  if(!cv){$("cvmsg").textContent="Paste your CV here first, then tap Save.";$("cv").focus();$("cv").scrollIntoView({block:"center"});return;}
+  cur=j;$("dt").textContent=j.t;$("dco").textContent=j.co+" · "+j.h;
+  let saved=null;try{saved=JSON.parse(get("tailor:"+j.u)||"null")}catch(x){}
+  if(saved){show(j,saved,"Your tailored version for this job.");$("dredo").hidden=!sample;}
+  else{show(j,basic(j,cv,name),sample?"":"Quick version ready to copy: your CV with a profile written for this job, plus a cover note.");$("dredo").hidden=true;}
+  try{$("dlg").showModal()}catch(x){$("dlg").setAttribute("open","")}
+  if(!saved)ai(j,cv,name);
+});
+$("dredo").addEventListener("click",()=>{if(cur)ai(cur,$("cv").value.trim(),$("nm").value.trim())});
+$("dclose").addEventListener("click",()=>{if(ctl)ctl.abort();try{$("dlg").close()}catch(x){$("dlg").removeAttribute("open")}});
+$("dlg").addEventListener("click",async e=>{const b=e.target.closest("[data-copy]");if(!b)return;
+  const t=$(b.dataset.copy);try{await navigator.clipboard.writeText(t.value);b.textContent="Copied ✓"}catch(x){t.select();b.textContent="Select + copy"}
+  setTimeout(()=>{b.textContent=b.dataset.copy==="ocv"?"Copy CV":"Copy note"},1800);});
+function isNew(j){return j.added&&checked&&(new Date(checked)-new Date(j.added))<=2*864e5&&j.added!=="2026-11-24"}
+fetch("jobs.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{jobs=d.jobs||[];checked=d.checked||"";
+  document.getElementById("total").textContent=jobs.length;
+  document.getElementById("checked").textContent=checked?new Date(checked+"T12:00:00").toLocaleDateString("en-ZA",{day:"numeric",month:"long",year:"numeric"}):"";
+  render();}).catch(()=>{list.innerHTML='<li class="empty">Couldn\'t load the job list. Refresh the page.</li>'});
+}
+</script>
+</body>
+</html>
