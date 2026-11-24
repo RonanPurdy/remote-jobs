@@ -11,7 +11,8 @@
    "top": 1,
    "why": "EA work plus Xero billing, reconciliations and company filings. Very close to what you already do.",
    "u": "https://www.pnet.co.za/jobs--Executive-Assistant-Bookkeeper-Remote-Cape-Town-based-ideally-The-Legends-Agency--4305163-inline.html",
-   "added": "2026-11-24"
+   "added": "2026-11-24",
+   "fails": 1
   },
   {
    "cat": "ea",
@@ -144,7 +145,8 @@
    "m": 75,
    "why": "Run the monthly books for a UK business. Dext or Hubdoc is a plus.",
    "u": "https://apply.workable.com/remote-recruitment/j/6639EBA669/",
-   "added": "2026-11-24"
+   "added": "2026-11-24",
+   "fails": 1
   },
   {
    "cat": "ops",
@@ -155,7 +157,8 @@
    "m": 74,
    "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Google Workspace, Microsoft 365, diary and inbox work.",
    "u": "https://apply.workable.com/remote-recruitment/j/C0BEA5F24D/",
-   "added": "2026-11-24"
+   "added": "2026-11-24",
+   "fails": 1
   },
   {
    "cat": "ops",
@@ -497,7 +500,8 @@
    "m": 66,
    "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Microsoft 365.",
    "u": "https://apply.workable.com/virtuhire/j/CDB755A3C8/",
-   "added": "2026-11-24"
+   "added": "2026-11-24",
+   "fails": 1
   },
   {
    "cat": "ea",
@@ -509,7 +513,8 @@
    "chk": 1,
    "why": "Supporting senior leadership. Huzzle has UK, EU and AU clients, so confirm the hours.",
    "u": "https://apply.workable.com/huzzle/j/A1B1C049F6/",
-   "added": "2026-11-24"
+   "added": "2026-11-24",
+   "fails": 1
   },
   {
    "cat": "ops",
@@ -696,6 +701,53 @@
    "u": "https://apply.workable.com/virtuhire/j/7C37962234/",
    "added": "2026-11-24",
    "noexp": 1
+  },
+  {
+   "cat": "ops",
+   "t": "Email Coordinator",
+   "co": "Assist World",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "$50",
+   "m": 80,
+   "noexp": 1,
+   "comm": 1,
+   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Notion, Google Workspace, diary and inbox work.",
+   "u": "https://jobs.lever.co/assist-world/3d3f5eb9-b90d-4111-bce2-61de1052a672",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "ops",
+   "t": "Patient Experience & Operations Coordinator",
+   "co": "Assist World",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "$50",
+   "m": 78,
+   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Notion, Google Workspace, Microsoft 365.",
+   "u": "https://jobs.lever.co/assist-world/5742f3c3-1e2d-4496-9504-ca656154c9a8",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "ops",
+   "t": "SharePoint Administrator",
+   "co": "Assist World",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "$50",
+   "m": 72,
+   "noexp": 1,
+   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Microsoft 365.",
+   "u": "https://jobs.lever.co/assist-world/29443e7f-5e43-4f45-bad7-5625c3011d12",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "ea",
+   "t": "Virtual Executive Assistant",
+   "co": "Assist World",
+   "h": "European hours",
+   "p": "$5",
+   "m": 74,
+   "why": "Executive and virtual assistant work: your core experience. Mentions Microsoft 365, diary and inbox work.",
+   "u": "https://jobs.lever.co/assist-world/21f2141a-d35e-49ee-a23a-953a14511420",
+   "added": "2026-11-24"
   }
  ]
 }
