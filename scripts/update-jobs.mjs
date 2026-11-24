@@ -6,7 +6,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 
 const FILE = new URL("../jobs.json", import.meta.url);
-const MAX_JOBS = 90;
+const MAX_JOBS = 120;
 const MAX_AGE_DAYS = 60;
 const UA = "Mozilla/5.0 (compatible; job-list-refresh/1.0; +https://github.com)";
 
@@ -54,10 +54,10 @@ const CAT_WHY = {
 
 function category(title) {
   if (/payroll/i.test(title)) return "pay";
-  if (/bookkeep|account|finance|ledger|reconcil|credit control|billing|invoic|collections/i.test(title)) return "fin";
-  if (/appointment|setter|sales|\bSDR\b|\bBDR\b|telesales|lead gen|business development|closer/i.test(title)) return "sales";
-  if (/customer|support|service|chat|call cent|contact cent|receptionist|concierge|guest|booking|dispatch|helpdesk/i.test(title)) return "cs";
+  if (/appointment|setter|sales|\bSDR\b|\bBDR\b|telesales|lead gen|business development|closer|account (manager|executive)/i.test(title)) return "sales";
   if (/(executive|personal|virtual) assistant|\bPA\b|\bVA\b/i.test(title)) return "ea";
+  if (/bookkeep|accounts?\b|finance|ledger|reconcil|credit control|billing|invoic|collections/i.test(title)) return "fin";
+  if (/customer|support|service|chat|call cent|contact cent|receptionist|concierge|guest|booking|dispatch|helpdesk/i.test(title)) return "cs";
   return "ops";
 }
 const CATS_OK = new Set(["ea", "ops", "fin", "pay", "cs", "sales"]);
@@ -118,7 +118,6 @@ function evaluate({ title, company, url, text }) {
   const h = hoursLabel(all);
   return {
     cat, t: title.trim(), co: company, h, p: payLabel(all), m,
-    ...(m >= 85 ? { top: 1 } : {}),
     ...(/part[- ]time|flexible hours|flexible schedule/i.test(all) ? { study: 1 } : {}),
     ...(h === "Check ad" ? { chk: 1 } : {}),
     ...(noexp ? { noexp: 1 } : {}),
@@ -300,6 +299,10 @@ if (jobs.length > MAX_JOBS) {
   jobs.sort((a, b) => b.m - a.m || b.added.localeCompare(a.added));
   jobs = jobs.slice(0, MAX_JOBS);
 }
+
+// Top picks: the 8 best matches for her background (not sales roles).
+jobs.forEach((j) => { delete j.top; j.cat = category(j.t); });
+[...jobs].filter((j) => j.cat !== "sales").sort((a, b) => b.m - a.m).slice(0, 8).forEach((j) => { j.top = 1; });
 
 const changed = removed.length || added.length || data.checked !== today;
 data.checked = today;
