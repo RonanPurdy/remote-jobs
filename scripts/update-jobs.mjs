@@ -15,7 +15,7 @@ const daysSince = (d) => (Date.parse(today) - Date.parse(d)) / 864e5;
 
 // ---------- sources ----------
 // Workable accounts that hire South Africa-based remote staff.
-const WORKABLE = ["remote-recruitment", "huzzle", "d2b-1", "virtuhire", "emapply", "hirehawk", "fyxer-7", "pavago", "reworkssolutions", "ista-2"];
+const WORKABLE = ["remote-recruitment", "huzzle", "d2b-1", "virtuhire", "emapply", "hirehawk", "fyxer-7", "pavago", "reworkssolutions", "ista-2", "division50"];
 const LEVER = ["assist-world"];
 const TEAMTAILOR_RSS = ["https://remoterecruitment.teamtailor.com/jobs.rss"];
 const REMOTIVE_TERMS = ["assistant", "bookkeeper", "payroll", "administrator", "customer support", "sales", "appointment setter", "data entry"];
@@ -30,7 +30,7 @@ const OK_HOURS = /\bUK\b|united kingdom|GMT|BST|british|london|europe|\bCET\b|\b
 const SA_ELIGIBLE = /south africa|\bSA\b-?based|cape town|johannesburg|durban|pretoria|gqeberha/i;
 const GLOBAL_ELIGIBLE = /worldwide|anywhere|\bEMEA\b|africa/i;
 const NOEXP = /no (prior |previous )?experience (is )?(required|needed|necessary)|entry[- ]level|full training|training (is )?provided|we will train|we'll train|graduates? welcome|no experience/i;
-const COMM = /commission|\bOTE\b|uncapped|bonus(es)? per|per (sale|appointment|booking|meeting)|performance[- ]based (pay|bonus|incentives?)|incentive/i;
+const COMM = /commission|\bOTE\b|uncapped|per (sale|appointment|booking|meeting|deal)/i;
 
 const TOOLS = [
   [/xero/i, "Xero"], [/\bsage\b/i, "Sage"], [/quickbooks/i, "QuickBooks"], [/payroll/i, "payroll"],
@@ -90,8 +90,8 @@ function payLabel(text) {
   if (r) return fmtR(r[1]) + (r[2] ? "–" + fmtR(r[2]) : "");
   const g = text.match(/£\s?\d[\d,]*(?:\s*[–-]\s*£?\s?\d[\d,]*)?/);
   if (g) return g[0].replace(/\s+/g, "");
-  const u = text.match(/(?:US)?\$\s?\d[\d,]*(?:\s*[–-]\s*\$?\s?\d[\d,]*)?/);
-  return u ? u[0].replace(/\s+/g, "") : "See ad";
+  const u = text.match(/(?:US)?\$\s?\d[\d,]*(?:\.\d+)?(?:\s*[–-]\s*\$?\s?\d[\d,]*(?:\.\d+)?)?\s*(?:a|per|\/)\s*(month|mo|hour|hr)\b/i);
+  return u ? u[0].replace(/\s*(a|per|\/)\s*(month|mo)\b/i, "/mo").replace(/\s*(a|per|\/)\s*(hour|hr)\b/i, "/hr").replace(/\s+/g, "") : "See ad";
 }
 
 // Returns a job object or null if it fails her filters.
@@ -270,12 +270,23 @@ if (removed.length > data.jobs.length / 2) {
   removed.length = 0;
 }
 
+// Refresh details of kept jobs that are still in a feed (fixes tags, pay, hours).
+const raws = sources.flat();
+const byUrl = new Map(raws.map((r) => [String(r.url || "").replace(/\/$/, "").toLowerCase(), r]));
+for (let i = kept.length - 1; i >= 0; i--) {
+  const raw = byUrl.get(kept[i].u.replace(/\/$/, "").toLowerCase());
+  if (!raw) continue;
+  const fresh = evaluate(raw);
+  if (!fresh) { removed.push(`${kept[i].t} — ${kept[i].co} (no longer fits her filters)`); kept.splice(i, 1); continue; }
+  kept[i] = { ...fresh, added: kept[i].added };
+}
+
 // 2. add new
 const key = (j) => `${j.t}|${j.co}|${j.p}`.toLowerCase();
 const seenU = new Set(kept.map((j) => j.u.replace(/\/$/, "").toLowerCase()));
 const seenK = new Set(kept.map(key));
 const added = [];
-for (const raw of sources.flat()) {
+for (const raw of raws) {
   const job = evaluate(raw);
   if (!job) continue;
   const u = job.u.replace(/\/$/, "").toLowerCase();
