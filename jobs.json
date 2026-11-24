@@ -12,19 +12,7 @@
    "why": "EA work plus Xero billing, reconciliations and company filings. Very close to what you already do.",
    "u": "https://www.pnet.co.za/jobs--Executive-Assistant-Bookkeeper-Remote-Cape-Town-based-ideally-The-Legends-Agency--4305163-inline.html",
    "added": "2026-11-24",
-   "fails": 1
-  },
-  {
-   "cat": "ea",
-   "t": "Executive Admin Assistant",
-   "co": "Remote Recruitment (UK employer)",
-   "h": "11:00–19:00 SAST",
-   "p": "R29,000–R32,000",
-   "m": 85,
-   "top": 1,
-   "why": "Own a UK executive's diary, inbox and follow-ups.",
-   "u": "https://apply.workable.com/remote-recruitment/j/FF8B80456E/",
-   "added": "2026-11-24"
+   "fails": 2
   },
   {
    "cat": "fin",
@@ -46,6 +34,29 @@
    "m": 84,
    "why": "Bookkeeping and finance admin you already do daily. Mentions Xero, Google Workspace, Microsoft 365.",
    "u": "https://apply.workable.com/virtuhire/j/6057D979B0/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "fin",
+   "t": "Bookkeeper",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 84,
+   "why": "Bookkeeping and finance admin you already do daily. Mentions Xero, Sage, QuickBooks.",
+   "u": "https://apply.workable.com/huzzle/j/BCDC5A8FFF/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "fin",
+   "t": "Bookkeeping Assistant",
+   "co": "ReWorks Solutions",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 84,
+   "comm": 1,
+   "why": "Bookkeeping and finance admin you already do daily. Mentions payroll, monday.com, Microsoft 365.",
+   "u": "https://apply.workable.com/reworkssolutions/j/73709CE044/",
    "added": "2026-11-24"
   },
   {
@@ -84,12 +95,34 @@
   {
    "cat": "ea",
    "t": "Virtual Assistant",
-   "co": "Remote Recruitment (UK manager)",
+   "co": "Remote Recruitment (UK employer)",
    "h": "11:00–19:00 SAST",
-   "p": "See ad",
-   "m": 80,
-   "why": "Inboxes, calendars and to-do lists for a UK manager or small team.",
+   "p": "R23,000–R25,000",
+   "m": 82,
+   "why": "Executive and virtual assistant work: your core experience. Mentions Google Workspace, Microsoft 365, diary and inbox work.",
    "u": "https://apply.workable.com/remote-recruitment/j/447C0A1262/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "ea",
+   "t": "Executive Assistant",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 82,
+   "why": "Executive and virtual assistant work: your core experience. Mentions Notion, Google Workspace, Microsoft 365.",
+   "u": "https://apply.workable.com/huzzle/j/A1B1C049F6/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "ops",
+   "t": "Operations Coordinator",
+   "co": "Pavago",
+   "h": "European hours",
+   "p": "See ad",
+   "m": 82,
+   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions monday.com, ClickUp, Notion.",
+   "u": "https://apply.workable.com/pavago/j/656336B5F7/",
    "added": "2026-11-24"
   },
   {
@@ -104,6 +137,30 @@
    "added": "2026-11-24"
   },
   {
+   "cat": "ops",
+   "t": "Email Coordinator",
+   "co": "Assist World",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 80,
+   "noexp": 1,
+   "comm": 1,
+   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Notion, Google Workspace, diary and inbox work.",
+   "u": "https://jobs.lever.co/assist-world/3d3f5eb9-b90d-4111-bce2-61de1052a672",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "ops",
+   "t": "Executive Admin Assistant",
+   "co": "Remote Recruitment (UK employer)",
+   "h": "11:00–19:00 SAST",
+   "p": "R29,000–R32,000",
+   "m": 78,
+   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Notion, Google Workspace, Microsoft 365.",
+   "u": "https://apply.workable.com/remote-recruitment/j/FF8B80456E/",
+   "added": "2026-11-24"
+  },
+  {
    "cat": "ea",
    "t": "Virtual Assistant",
    "co": "Huzzle",
@@ -112,17 +169,6 @@
    "m": 78,
    "why": "Executive and virtual assistant work: your core experience. Mentions Google Workspace, Microsoft 365, diary and inbox work.",
    "u": "https://apply.workable.com/huzzle/j/16ADD28B26/",
-   "added": "2026-11-24"
-  },
-  {
-   "cat": "ea",
-   "t": "Virtual Assistant (Legal Support Specialist)",
-   "co": "Huzzle",
-   "h": "UK hours (~11:00–19:30 SAST)",
-   "p": "See ad",
-   "m": 78,
-   "why": "Executive and virtual assistant work: your core experience. Mentions Google Workspace, Microsoft 365, diary and inbox work.",
-   "u": "https://apply.workable.com/huzzle/j/AB53F981A4/",
    "added": "2026-11-24"
   },
   {
@@ -137,16 +183,49 @@
    "added": "2026-11-24"
   },
   {
+   "cat": "ea",
+   "t": "Virtual Assistant - Property Operations",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 78,
+   "why": "Executive and virtual assistant work: your core experience. Mentions Google Workspace, Microsoft 365, invoicing.",
+   "u": "https://apply.workable.com/huzzle/j/B5C989DC0D/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "ops",
+   "t": "Patient Experience & Operations Coordinator",
+   "co": "Assist World",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 78,
+   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Notion, Google Workspace, Microsoft 365.",
+   "u": "https://jobs.lever.co/assist-world/5742f3c3-1e2d-4496-9504-ca656154c9a8",
+   "added": "2026-11-24"
+  },
+  {
    "cat": "fin",
-   "t": "Bookkeeper",
-   "co": "Remote Recruitment (UK employer)",
-   "h": "11:00–19:00 SAST",
-   "p": "R29,000–R32,000",
-   "m": 75,
-   "why": "Run the monthly books for a UK business. Dext or Hubdoc is a plus.",
-   "u": "https://apply.workable.com/remote-recruitment/j/6639EBA669/",
-   "added": "2026-11-24",
-   "fails": 1
+   "t": "Bookkeeper - Xero Specialist",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 76,
+   "study": 1,
+   "why": "Bookkeeping and finance admin you already do daily. Mentions Xero, reconciliations, invoicing.",
+   "u": "https://apply.workable.com/huzzle/j/E68F095D3D/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "fin",
+   "t": "Billing & Operations Specialist",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 76,
+   "why": "Bookkeeping and finance admin you already do daily. Mentions QuickBooks, reconciliations, invoicing.",
+   "u": "https://apply.workable.com/huzzle/j/CF745D8BDE/",
+   "added": "2026-11-24"
   },
   {
    "cat": "ops",
@@ -157,8 +236,7 @@
    "m": 74,
    "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Google Workspace, Microsoft 365, diary and inbox work.",
    "u": "https://apply.workable.com/remote-recruitment/j/C0BEA5F24D/",
-   "added": "2026-11-24",
-   "fails": 1
+   "added": "2026-11-24"
   },
   {
    "cat": "ops",
@@ -205,14 +283,25 @@
    "added": "2026-11-24"
   },
   {
-   "cat": "ea",
-   "t": "Virtual Assistant - Guest Booking",
+   "cat": "ops",
+   "t": "Property Operations Coordinator",
    "co": "Huzzle",
    "h": "UK hours (~11:00–19:30 SAST)",
    "p": "See ad",
    "m": 74,
+   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Google Workspace, Microsoft 365, invoicing.",
+   "u": "https://apply.workable.com/huzzle/j/A1AC787DE2/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "ea",
+   "t": "Virtual Executive Assistant",
+   "co": "Assist World",
+   "h": "European hours",
+   "p": "See ad",
+   "m": 74,
    "why": "Executive and virtual assistant work: your core experience. Mentions Microsoft 365, diary and inbox work.",
-   "u": "https://apply.workable.com/huzzle/j/88C5A2384C/",
+   "u": "https://jobs.lever.co/assist-world/21f2141a-d35e-49ee-a23a-953a14511420",
    "added": "2026-11-24"
   },
   {
@@ -238,14 +327,27 @@
    "added": "2026-11-24"
   },
   {
-   "cat": "ea",
-   "t": "Virtual Assistant – Property Operations",
-   "co": "Huzzle (UK property consultancy)",
-   "h": "UK hours",
-   "p": "Set per client",
-   "m": 70,
-   "why": "Operations and project coordination, with phone calls to UK clients.",
-   "u": "https://apply.workable.com/huzzle/j/B5C989DC0D/",
+   "cat": "ops",
+   "t": "SharePoint Administrator",
+   "co": "Assist World",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 72,
+   "noexp": 1,
+   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Microsoft 365.",
+   "u": "https://jobs.lever.co/assist-world/29443e7f-5e43-4f45-bad7-5625c3011d12",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "fin",
+   "t": "IT Sales Account Manager",
+   "co": "VirtuHire",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 72,
+   "noexp": 1,
+   "why": "Bookkeeping and finance admin you already do daily. Mentions monday.com, Microsoft 365.",
+   "u": "https://apply.workable.com/virtuhire/j/9AB4140DC6/",
    "added": "2026-11-24"
   },
   {
@@ -260,28 +362,6 @@
    "added": "2026-11-24"
   },
   {
-   "cat": "fin",
-   "t": "Bookkeeper – Xero Specialist",
-   "co": "Huzzle",
-   "h": "UK hours",
-   "p": "Set per client",
-   "m": 70,
-   "why": "Xero-focused role. Plays to your strongest tool.",
-   "u": "https://apply.workable.com/huzzle/j/E68F095D3D/",
-   "added": "2026-11-24"
-  },
-  {
-   "cat": "fin",
-   "t": "Finance Administrator",
-   "co": "Remote Recruitment (UK employer)",
-   "h": "UK hours",
-   "p": "Rand salary",
-   "m": 70,
-   "why": "Day-to-day finance admin, with training provided.",
-   "u": "https://apply.workable.com/remote-recruitment/j/CEB25A3A13/",
-   "added": "2026-11-24"
-  },
-  {
    "cat": "ops",
    "t": "Operations Coordinator",
    "co": "Remote Recruitment (UK employer)",
@@ -293,17 +373,6 @@
    "added": "2026-11-24"
   },
   {
-   "cat": "ea",
-   "t": "Virtual Assistant - Guest Relations & Bookings",
-   "co": "Huzzle",
-   "h": "UK hours (~11:00–19:30 SAST)",
-   "p": "See ad",
-   "m": 70,
-   "why": "Executive and virtual assistant work: your core experience. Mentions diary and inbox work.",
-   "u": "https://apply.workable.com/huzzle/j/611A040BE9/",
-   "added": "2026-11-24"
-  },
-  {
    "cat": "ops",
    "t": "Operations & Project Administrator - IT industry",
    "co": "VirtuHire",
@@ -312,6 +381,39 @@
    "m": 70,
    "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions monday.com, Microsoft 365.",
    "u": "https://apply.workable.com/virtuhire/j/CA43BB9B17/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "ops",
+   "t": "Data Entry Specialist",
+   "co": "Remote Recruitment (UK employer)",
+   "h": "11:00–19:00 SAST",
+   "p": "R29,000–R32,000",
+   "m": 70,
+   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Microsoft 365, reconciliations.",
+   "u": "https://apply.workable.com/remote-recruitment/j/9F39744FBE/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "fin",
+   "t": "Bookkeeper",
+   "co": "Remote Recruitment (UK employer)",
+   "h": "11:00–19:00 SAST",
+   "p": "R29,000–R32,000",
+   "m": 69,
+   "why": "Bookkeeping and finance admin you already do daily. Mentions Xero, Sage, QuickBooks.",
+   "u": "https://apply.workable.com/remote-recruitment/j/6639EBA669/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "fin",
+   "t": "Finance Administrator",
+   "co": "Remote Recruitment (UK employer)",
+   "h": "11:00–19:00 SAST",
+   "p": "R29,000–R32,000",
+   "m": 69,
+   "why": "Bookkeeping and finance admin you already do daily. Mentions Xero, Sage, QuickBooks.",
+   "u": "https://apply.workable.com/remote-recruitment/j/CEB25A3A13/",
    "added": "2026-11-24"
   },
   {
@@ -359,6 +461,39 @@
    "added": "2026-11-24"
   },
   {
+   "cat": "fin",
+   "t": "Billing Administrator",
+   "co": "Remote Recruitment (UK employer)",
+   "h": "11:00–19:00 SAST",
+   "p": "R29,000–R32,000",
+   "m": 69,
+   "why": "Bookkeeping and finance admin you already do daily. Mentions Xero, QuickBooks, Microsoft 365.",
+   "u": "https://apply.workable.com/remote-recruitment/j/E0A11415C1/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "fin",
+   "t": "Bookkeeper & Customer Service Support",
+   "co": "VirtuHire",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 69,
+   "why": "Bookkeeping and finance admin you already do daily. Mentions Xero, payroll, monday.com.",
+   "u": "https://apply.workable.com/virtuhire/j/AA65E76471/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "cs",
+   "t": "Virtual Assistant (Legal Support Specialist)",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 68,
+   "why": "Client-facing support work that uses your client coordination experience. Mentions Google Workspace, Microsoft 365, diary and inbox work.",
+   "u": "https://apply.workable.com/huzzle/j/AB53F981A4/",
+   "added": "2026-11-24"
+  },
+  {
    "cat": "ops",
    "t": "Client Operations Manager",
    "co": "Huzzle",
@@ -392,14 +527,25 @@
    "added": "2026-11-24"
   },
   {
-   "cat": "ops",
-   "t": "Billing Administrator",
-   "co": "Remote Recruitment (UK employer)",
-   "h": "11:00–19:00 SAST",
-   "p": "R29,000–R32,000",
-   "m": 67,
-   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Xero, QuickBooks, Microsoft 365.",
-   "u": "https://apply.workable.com/remote-recruitment/j/E0A11415C1/",
+   "cat": "fin",
+   "t": "Account Executive - Digital Marketing & Agency Sales",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 68,
+   "why": "Bookkeeping and finance admin you already do daily. Mentions Microsoft 365.",
+   "u": "https://apply.workable.com/huzzle/j/3912292EBA/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "fin",
+   "t": "SaaS Sales Development Representative - Treasury & Corporate Finance",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 68,
+   "why": "Bookkeeping and finance admin you already do daily. Mentions Microsoft 365.",
+   "u": "https://apply.workable.com/huzzle/j/D2BEB88458/",
    "added": "2026-11-24"
   },
   {
@@ -459,17 +605,6 @@
   },
   {
    "cat": "ops",
-   "t": "AP - Mortgage Administrator & Client Support | Remote South Africa",
-   "co": "D2B",
-   "h": "UK hours (~11:00–19:30 SAST)",
-   "p": "See ad",
-   "m": 66,
-   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Microsoft 365.",
-   "u": "https://apply.workable.com/d2b-1/j/7887D1E31D/",
-   "added": "2026-11-24"
-  },
-  {
-   "cat": "ops",
    "t": "Recruitment Operations Admin (Monday CRM - South Africa)",
    "co": "D2B",
    "h": "UK hours (~11:00–19:30 SAST)",
@@ -500,43 +635,50 @@
    "m": 66,
    "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Microsoft 365.",
    "u": "https://apply.workable.com/virtuhire/j/CDB755A3C8/",
-   "added": "2026-11-24",
-   "fails": 1
-  },
-  {
-   "cat": "ea",
-   "t": "Executive Assistant",
-   "co": "Huzzle",
-   "h": "Check ad",
-   "p": "Set per client",
-   "m": 65,
-   "chk": 1,
-   "why": "Supporting senior leadership. Huzzle has UK, EU and AU clients, so confirm the hours.",
-   "u": "https://apply.workable.com/huzzle/j/A1B1C049F6/",
-   "added": "2026-11-24",
-   "fails": 1
+   "added": "2026-11-24"
   },
   {
    "cat": "ops",
-   "t": "Property Operations Coordinator",
-   "co": "Huzzle (UK renovation projects)",
-   "h": "UK hours",
-   "p": "See ad",
-   "m": 65,
-   "why": "Link between site contractors and leadership. Keep projects on schedule.",
-   "u": "https://apply.workable.com/huzzle/j/A1AC787DE2/",
+   "t": "Marketing Assistant",
+   "co": "Remote Recruitment (UK employer)",
+   "h": "11:00–19:00 SAST",
+   "p": "R23,000–R25,000",
+   "m": 66,
+   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions diary and inbox work.",
+   "u": "https://apply.workable.com/remote-recruitment/j/A26B6E3712/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "ops",
+   "t": "Social Media Assistant",
+   "co": "Remote Recruitment (UK employer)",
+   "h": "11:00–19:00 SAST",
+   "p": "R23,000–R25,000",
+   "m": 66,
+   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions diary and inbox work.",
+   "u": "https://apply.workable.com/remote-recruitment/j/104E2AC15C/",
    "added": "2026-11-24"
   },
   {
    "cat": "fin",
-   "t": "Bookkeeper",
-   "co": "Huzzle",
-   "h": "Check ad",
-   "p": "Set per client",
+   "t": "Invoicing Administrator",
+   "co": "Remote Recruitment (UK employer)",
+   "h": "11:00–19:00 SAST",
+   "p": "R23,000–R25,000",
    "m": 65,
-   "chk": 1,
-   "why": "Remote bookkeeper for one Huzzle client. Payroll experience is a plus.",
-   "u": "https://apply.workable.com/huzzle/j/BCDC5A8FFF/",
+   "why": "Bookkeeping and finance admin you already do daily. Mentions Xero, QuickBooks, Microsoft 365.",
+   "u": "https://apply.workable.com/remote-recruitment/j/507E099CBC/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "cs",
+   "t": "Virtual Assistant - Guest Booking",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 64,
+   "why": "Client-facing support work that uses your client coordination experience. Mentions Microsoft 365, diary and inbox work.",
+   "u": "https://apply.workable.com/huzzle/j/88C5A2384C/",
    "added": "2026-11-24"
   },
   {
@@ -562,14 +704,25 @@
    "added": "2026-11-24"
   },
   {
-   "cat": "ops",
-   "t": "Invoicing Administrator",
+   "cat": "cs",
+   "t": "IT Helpdesk Agent",
    "co": "Remote Recruitment (UK employer)",
    "h": "11:00–19:00 SAST",
    "p": "R23,000–R25,000",
-   "m": 63,
-   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Xero, QuickBooks, Microsoft 365.",
-   "u": "https://apply.workable.com/remote-recruitment/j/507E099CBC/",
+   "m": 64,
+   "why": "Client-facing support work that uses your client coordination experience. Mentions Google Workspace, Microsoft 365.",
+   "u": "https://apply.workable.com/remote-recruitment/j/3230C85F9E/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "cs",
+   "t": "Receptionist",
+   "co": "Remote Recruitment (UK employer)",
+   "h": "11:00–19:00 SAST",
+   "p": "R23,000–R25,000",
+   "m": 64,
+   "why": "Client-facing support work that uses your client coordination experience. Mentions Google Workspace, Microsoft 365.",
+   "u": "https://apply.workable.com/remote-recruitment/j/3D50D4A9CB/",
    "added": "2026-11-24"
   },
   {
@@ -585,69 +738,191 @@
    "added": "2026-11-24"
   },
   {
+   "cat": "cs",
+   "t": "Virtual Assistant - Guest Relations & Bookings",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 60,
+   "why": "Client-facing support work that uses your client coordination experience. Mentions diary and inbox work.",
+   "u": "https://apply.workable.com/huzzle/j/611A040BE9/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "cs",
+   "t": "AP - Mortgage Administrator & Client Support | Remote South Africa",
+   "co": "D2B",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 60,
+   "why": "Client-facing support work that uses your client coordination experience. Mentions Microsoft 365.",
+   "u": "https://apply.workable.com/d2b-1/j/7887D1E31D/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "cs",
+   "t": "Customer Support Specialist",
+   "co": "Remote Recruitment (UK employer)",
+   "h": "11:00–19:00 SAST",
+   "p": "R29,000–R32,000",
+   "m": 60,
+   "why": "Client-facing support work that uses your client coordination experience. Mentions Microsoft 365.",
+   "u": "https://apply.workable.com/remote-recruitment/j/D140F8685B/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "cs",
+   "t": "Dental Patient Chat Support Specialist",
+   "co": "VirtuHire",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 60,
+   "why": "Client-facing support work that uses your client coordination experience. Mentions Microsoft 365.",
+   "u": "https://apply.workable.com/virtuhire/j/8065B8A97C/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "cs",
+   "t": "Patient Booking Specialist",
+   "co": "VirtuHire",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 60,
+   "why": "Client-facing support work that uses your client coordination experience. Mentions Microsoft 365.",
+   "u": "https://apply.workable.com/virtuhire/j/DBA6C469E0/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "cs",
+   "t": "Customer Success Manager - AI & Digital Content",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 58,
+   "why": "Client-facing support work that uses your client coordination experience. Mentions Notion, Microsoft 365.",
+   "u": "https://apply.workable.com/huzzle/j/99CFD93458/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "cs",
+   "t": "Customer Success Manager - Digital Marketing",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 58,
+   "why": "Client-facing support work that uses your client coordination experience. Mentions ClickUp, Microsoft 365.",
+   "u": "https://apply.workable.com/huzzle/j/8A80395CA0/",
+   "added": "2026-11-24"
+  },
+  {
    "cat": "sales",
    "t": "Sales & Business Administrator | UK hours",
    "co": "VirtuHire",
    "h": "UK hours (~11:00–19:30 SAST)",
    "p": "See ad",
-   "m": 54,
-   "why": "Training provided. A way in while you apply for admin roles. Mentions Microsoft 365, diary and inbox work, invoicing.",
+   "m": 56,
+   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more. Mentions Microsoft 365, diary and inbox work, invoicing.",
    "u": "https://apply.workable.com/virtuhire/j/C4BFABA747/",
    "added": "2026-11-24"
   },
   {
-   "cat": "fin",
-   "t": "Bookkeeper & Customer Service Support",
-   "co": "VirtuHire (UK)",
-   "h": "UK hours",
-   "p": "See ad",
-   "m": 50,
-   "why": "Stretch role: needs UK VAT (MTD). Mention you're willing to learn.",
-   "u": "https://apply.workable.com/virtuhire/j/AA65E76471/",
-   "added": "2026-11-24"
-  },
-  {
-   "cat": "sales",
-   "t": "Appointment Setter",
+   "cat": "cs",
+   "t": "Call Centre Agent",
    "co": "Remote Recruitment (UK employer)",
    "h": "11:00–19:00 SAST",
    "p": "R23,000–R25,000",
-   "m": 46,
-   "why": "Training provided. A way in while you apply for admin roles. Mentions diary and inbox work.",
-   "u": "https://apply.workable.com/remote-recruitment/j/2782AD2C63/",
+   "m": 56,
+   "why": "Client-facing support work that uses your client coordination experience.",
+   "u": "https://apply.workable.com/remote-recruitment/j/BBDF50C1BB/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "cs",
+   "t": "Customer Retention Specialist",
+   "co": "Remote Recruitment (UK employer)",
+   "h": "11:00–19:00 SAST",
+   "p": "R29,000–R32,000",
+   "m": 56,
+   "why": "Client-facing support work that uses your client coordination experience.",
+   "u": "https://apply.workable.com/remote-recruitment/j/1749073EAA/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "cs",
+   "t": "Customer Service Agent",
+   "co": "Remote Recruitment (UK employer)",
+   "h": "11:00–19:00 SAST",
+   "p": "R23,000–R25,000",
+   "m": 56,
+   "why": "Client-facing support work that uses your client coordination experience.",
+   "u": "https://apply.workable.com/remote-recruitment/j/651996DA12/",
    "added": "2026-11-24"
   },
   {
    "cat": "sales",
-   "t": "Appointment Setter - B2B",
+   "t": "Sales Development Representative - Real Estate",
    "co": "Huzzle",
    "h": "UK hours (~11:00–19:30 SAST)",
    "p": "See ad",
-   "m": 42,
-   "why": "Training provided. A way in while you apply for admin roles. Mentions Microsoft 365, diary and inbox work.",
-   "u": "https://apply.workable.com/huzzle/j/88833B7FCA/",
+   "m": 56,
+   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more. Mentions Google Workspace, Microsoft 365, diary and inbox work.",
+   "u": "https://apply.workable.com/huzzle/j/3CDA2A83E3/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "cs",
+   "t": "Customer Service Manager",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 54,
+   "why": "Client-facing support work that uses your client coordination experience. Mentions Microsoft 365.",
+   "u": "https://apply.workable.com/huzzle/j/61DB71EEF6/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "cs",
+   "t": "Customer Success Manager",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 54,
+   "why": "Client-facing support work that uses your client coordination experience. Mentions Microsoft 365.",
+   "u": "https://apply.workable.com/huzzle/j/1798073743/",
    "added": "2026-11-24"
   },
   {
    "cat": "sales",
-   "t": "Appointment Setter - Remote",
+   "t": "Sales Development Representative - Marketing",
    "co": "Huzzle",
    "h": "UK hours (~11:00–19:30 SAST)",
    "p": "See ad",
-   "m": 46,
-   "why": "Training provided. A way in while you apply for admin roles. Mentions Microsoft 365.",
-   "u": "https://apply.workable.com/huzzle/j/9CD014F0EA/",
+   "m": 54,
+   "noexp": 1,
+   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more. Mentions Microsoft 365.",
+   "u": "https://apply.workable.com/huzzle/j/23275F560C/",
    "added": "2026-11-24"
   },
   {
-   "cat": "sales",
-   "t": "Remote Appointment Setter",
-   "co": "Huzzle",
+   "cat": "cs",
+   "t": "Customer Relationship Manager/Customer Support Manager",
+   "co": "VirtuHire",
    "h": "UK hours (~11:00–19:30 SAST)",
    "p": "See ad",
-   "m": 42,
-   "why": "Training provided. A way in while you apply for admin roles.",
-   "u": "https://apply.workable.com/huzzle/j/3F6BBA19E1/",
+   "m": 54,
+   "why": "Client-facing support work that uses your client coordination experience. Mentions Microsoft 365.",
+   "u": "https://apply.workable.com/virtuhire/j/B864665AA3/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "cs",
+   "t": "Customer Success Manager",
+   "co": "VirtuHire",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 54,
+   "why": "Client-facing support work that uses your client coordination experience. Mentions Microsoft 365.",
+   "u": "https://apply.workable.com/virtuhire/j/A9FFA72551/",
    "added": "2026-11-24"
   },
   {
@@ -656,31 +931,9 @@
    "co": "D2B",
    "h": "UK hours (~11:00–19:30 SAST)",
    "p": "£750–£1,000",
-   "m": 50,
-   "why": "Training provided. A way in while you apply for admin roles. Mentions Microsoft 365, diary and inbox work.",
+   "m": 52,
+   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more. Mentions Microsoft 365, diary and inbox work.",
    "u": "https://apply.workable.com/d2b-1/j/3F04F2D756/",
-   "added": "2026-11-24"
-  },
-  {
-   "cat": "sales",
-   "t": "Appointment Setter (Payaca or AirCall Exp) - Remote",
-   "co": "D2B",
-   "h": "UK hours (~11:00–19:30 SAST)",
-   "p": "See ad",
-   "m": 42,
-   "why": "Training provided. A way in while you apply for admin roles. Mentions monday.com, Google Workspace.",
-   "u": "https://apply.workable.com/d2b-1/j/F7F16EE366/",
-   "added": "2026-11-24"
-  },
-  {
-   "cat": "sales",
-   "t": "Sales and Appointment Setter - 474",
-   "co": "D2B",
-   "h": "UK hours (~11:00–19:30 SAST)",
-   "p": "See ad",
-   "m": 40,
-   "why": "Training provided. A way in while you apply for admin roles. Mentions Microsoft 365.",
-   "u": "https://apply.workable.com/d2b-1/j/6F05EFC3E9/",
    "added": "2026-11-24"
   },
   {
@@ -689,53 +942,67 @@
    "co": "VirtuHire",
    "h": "UK hours (~11:00–19:30 SAST)",
    "p": "See ad",
-   "m": 50,
-   "why": "Training provided. A way in while you apply for admin roles. Mentions Microsoft 365, diary and inbox work.",
+   "m": 52,
+   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more. Mentions Microsoft 365, diary and inbox work.",
    "u": "https://apply.workable.com/virtuhire/j/7C37962234/",
    "added": "2026-11-24"
   },
   {
-   "cat": "ops",
-   "t": "Email Coordinator",
-   "co": "Assist World",
+   "cat": "sales",
+   "t": "Inside Sales Representative",
+   "co": "Huzzle",
    "h": "UK hours (~11:00–19:30 SAST)",
-   "p": "$50",
-   "m": 80,
-   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Notion, Google Workspace, diary and inbox work.",
-   "u": "https://jobs.lever.co/assist-world/3d3f5eb9-b90d-4111-bce2-61de1052a672",
+   "p": "See ad",
+   "m": 52,
+   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more. Mentions Microsoft 365, diary and inbox work.",
+   "u": "https://apply.workable.com/huzzle/j/2738EA78C3/",
    "added": "2026-11-24"
   },
   {
-   "cat": "ops",
-   "t": "Patient Experience & Operations Coordinator",
-   "co": "Assist World",
+   "cat": "sales",
+   "t": "Sales Development Representative (Quickbooks Experience)",
+   "co": "Huzzle",
    "h": "UK hours (~11:00–19:30 SAST)",
-   "p": "$50",
-   "m": 78,
-   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Notion, Google Workspace, Microsoft 365.",
-   "u": "https://jobs.lever.co/assist-world/5742f3c3-1e2d-4496-9504-ca656154c9a8",
+   "p": "See ad",
+   "m": 52,
+   "study": 1,
+   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more. Mentions QuickBooks, invoicing.",
+   "u": "https://apply.workable.com/huzzle/j/86A06CEC7B/",
    "added": "2026-11-24"
   },
   {
-   "cat": "ops",
-   "t": "SharePoint Administrator",
-   "co": "Assist World",
+   "cat": "sales",
+   "t": "E-Commerce Customer Support & Sales Specialist (UK - Remote)",
+   "co": "D2B",
    "h": "UK hours (~11:00–19:30 SAST)",
-   "p": "$50",
-   "m": 72,
-   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Microsoft 365.",
-   "u": "https://jobs.lever.co/assist-world/29443e7f-5e43-4f45-bad7-5625c3011d12",
+   "p": "£750",
+   "m": 52,
+   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more. Mentions Microsoft 365, diary and inbox work.",
+   "u": "https://apply.workable.com/d2b-1/j/33343B5E03/",
    "added": "2026-11-24"
   },
   {
-   "cat": "ea",
-   "t": "Virtual Executive Assistant",
-   "co": "Assist World",
-   "h": "European hours",
-   "p": "$5",
-   "m": 74,
-   "why": "Executive and virtual assistant work: your core experience. Mentions Microsoft 365, diary and inbox work.",
-   "u": "https://jobs.lever.co/assist-world/21f2141a-d35e-49ee-a23a-953a14511420",
+   "cat": "sales",
+   "t": "Sales Development Representative (SDR) - UK B2B Market",
+   "co": "D2B",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "£1,300",
+   "m": 52,
+   "noexp": 1,
+   "comm": 1,
+   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more. Mentions monday.com, Microsoft 365.",
+   "u": "https://apply.workable.com/d2b-1/j/5219FE505D/",
+   "added": "2026-11-24"
+  },
+  {
+   "cat": "sales",
+   "t": "Sales Support (Interior Design)",
+   "co": "D2B",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 52,
+   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more. Mentions monday.com, Microsoft 365.",
+   "u": "https://apply.workable.com/d2b-1/j/47F0FBB717/",
    "added": "2026-11-24"
   }
  ]
