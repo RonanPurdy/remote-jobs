@@ -93,6 +93,24 @@ input[type=text]:focus-visible,textarea:focus-visible{outline:3px solid var(--bl
 .outh{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .status{font-size:14px;color:var(--mute);min-height:20px}
 .x{position:sticky;top:0;display:flex;justify-content:flex-end;padding:10px 10px 0;background:var(--bg)}
+.jump{color:var(--blue);font-weight:600;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.applied{margin-top:36px;border-top:2px solid var(--rule);padding-top:24px}
+.applied h2{font-weight:800;font-size:24px;line-height:1.2;margin:0 0 4px;display:flex;align-items:center;gap:10px}
+.apn{font-size:15px;font-weight:800;background:var(--green);color:#fff;border-radius:99px;padding:2px 10px}
+.apsub{color:var(--mute);margin:0 0 14px;font-size:15px}
+.aplist{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ap{background:var(--card);border:1px solid var(--rule);border-left:6px solid var(--c);border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 14px;align-items:center}
+.ap .t{font-size:16px}
+.ap .when{font-size:14px;color:var(--mute);margin:0}
+.ap .when b{color:var(--green);font-weight:700}
+.ap .when b.gone{color:var(--mute)}
+.ap .acts{grid-column:2;grid-row:1/span 3;display:flex;gap:8px}
+.ap .acts a,.ap .acts button{min-height:44px;padding:0 14px;border-radius:10px;font:600 14px Figtree,system-ui,sans-serif;display:inline-flex;align-items:center;cursor:pointer;text-decoration:none}
+.ap .acts a{background:var(--soft);color:var(--ink)}
+.ap .acts button{background:transparent;border:2px solid var(--rule);color:var(--mute)}
+.ap .acts a:focus-visible,.ap .acts button:focus-visible,.jump:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.apempty{padding:20px;text-align:center;color:var(--mute);background:var(--soft);border-radius:14px}
+@media(max-width:600px){.ap{grid-template-columns:1fr}.ap .acts{grid-column:1;grid-row:auto;margin-top:6px}}
 .empty{padding:32px;text-align:center;color:var(--mute);background:var(--soft);border-radius:16px}
 .foot{margin-top:32px;font-size:14px;color:var(--mute);border-top:1px solid var(--rule);padding-top:16px}
 @media(max-width:600px){.act{flex-wrap:wrap}.act .btn{flex-basis:100%;order:-1}.steps{grid-template-columns:1fr}.card{padding:14px}.t{font-size:17px}.stop{padding-left:36px}.stop::before{left:10px}.dot{left:2px}}
@@ -102,7 +120,7 @@ input[type=text]:focus-visible,textarea:focus-visible{outline:3px solid var(--bl
 <body>
 <main class="wrap">
   <h1>Your remote job list</h1>
-  <p class="lede"><span id="total">52</span> remote jobs open to South Africans: admin, EA, bookkeeping, payroll, customer support, sales and entry-level roles. All run in SA-friendly hours, with no degree needed. Tap Apply, send your CV, then tap Done.</p>
+  <p class="lede"><span id="total">52</span> remote jobs open to South Africans: admin, EA, bookkeeping, payroll, customer support, sales and entry-level roles. All run in SA-friendly hours, with no degree needed. Tap Apply, send your CV, then tap <b>Applied</b>. The job moves to your applied list at the bottom, so it won't show up again.</p>
 
   <section class="love" aria-label="A note for you">
     <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 35C8 26 3 19.5 3 13.2 3 8 7 4 12 4c3.3 0 6.3 1.8 8 4.6C21.7 5.8 24.7 4 28 4c5 0 9 4 9 9.2C37 19.5 32 26 20 35z" fill="#e6261f"/><path d="M11 9.5c-2.4.6-4 2.7-4 5.2" stroke="#fff" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".7"/></svg>
@@ -136,9 +154,15 @@ input[type=text]:focus-visible,textarea:focus-visible{outline:3px solid var(--bl
   <div class="chips" id="chips" role="toolbar" aria-label="Filter jobs"></div>
   <div class="opts">
     <span id="showing"></span>
-    <label><input type="checkbox" id="hide"> Hide jobs I've done</label>
+    <a href="#applied-list" class="jump" id="jump"></a>
   </div>
   <ol class="line" id="list"></ol>
+
+  <section class="applied" id="applied-list" aria-labelledby="aph">
+    <h2 id="aph">Jobs you've applied for <span class="apn" id="apn">0</span></h2>
+    <p class="apsub">Newest first. These don't show in the list above. If a company gets back to you, you'll find the job here.</p>
+    <ul class="aplist" id="aplist"></ul>
+  </section>
 
   <p class="foot">List checked <span id="checked">24 November 2026</span>. Closed jobs are removed and new ones added every morning. Some agency ads stay up after the role is filled. If a link says closed, skip it and move on. "Confirm hours" means the ad is live, but check the hours on the listing before applying. SAST times assume UK winter time (09:00 UK = 11:00 SAST).</p>
 </main>
@@ -174,12 +198,19 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"
 
 const FILTERS=[["all","All jobs","var(--ink)"],["top","Top picks","var(--amber)"],["noexp","No experience needed","var(--green)"],["comm","Commission","var(--amber)"],["study","Study-friendly","var(--blue)"],...Object.entries(CATS).filter(([k])=>k!=="entry").map(([k,v])=>[k,v.n,v.c])];
 let filter="all";
-const chips=document.getElementById("chips"),list=document.getElementById("list"),hide=document.getElementById("hide");
+const chips=document.getElementById("chips"),list=document.getElementById("list");
+const fmtDay=d=>{try{return new Date(d+"T12:00:00").toLocaleDateString("en-ZA",{day:"numeric",month:"short"})}catch(e){return d}};
+const todayStr=()=>new Date().toLocaleDateString("en-CA",{timeZone:"Africa/Johannesburg"});
+function migrate(){ // older saves stored 1 instead of the job details
+  let changed=false;
+  for(const u in done){if(done[u]===1||typeof done[u]!=="object"){const j=jobs.find(x=>x.u===u)||{u,t:"Earlier application",co:"No longer listed"};done[u]={t:j.t,co:j.co,cat:j.cat,u,at:todayStr()};changed=true}}
+  if(changed)save();
+}
 chips.innerHTML=FILTERS.map(([k,n,c])=>`<button class="chip" data-f="${k}" style="--c:${c}" aria-pressed="${k===filter}"><i></i>${esc(n)}</button>`).join("");
 
 function render(){
   const sorted=jobs.filter(j=>filter==="all"||(filter==="top"?j.top:filter==="noexp"?j.noexp:filter==="comm"?j.comm:filter==="study"?j.study||/0[5-6]:00|Flexible|part/i.test(j.h):j.cat===filter))
-    .filter(j=>!(hide.checked&&done[j.u]))
+    .filter(j=>!done[j.u])
     .sort((a,b)=>(b.top||0)-(a.top||0)||b.m-a.m);
   document.getElementById("showing").textContent=sorted.length+" showing";
   list.innerHTML=sorted.length?sorted.map(j=>{const c=(CATS[j.cat]||CATS.ops).c,d=!!done[j.u];return `<li class="stop${d?" is-done":""}" style="--c:${c}"><span class="dot"></span>
@@ -188,15 +219,24 @@ function render(){
    <div class="meta"><span><b>Hours</b> ${esc(j.h)}</span><span><b>Pay</b> ${esc(j.p)}${/See ad|Set per|Contract|Rand|Rate/.test(j.p)?"":" /mo"}</span></div>
    <p class="why">${esc(j.why)}</p>
    ${j.top||j.study||j.chk||j.noexp||j.comm||isNew(j)?`<div class="tags">${isNew(j)?'<span class="tag new">New</span>':""}${j.top?'<span class="tag top">Top pick</span>':""}${j.noexp?'<span class="tag">No experience needed</span>':""}${j.comm?'<span class="tag">Commission</span>':""}${j.study||/0[5-6]:00|Flexible|part/i.test(j.h)?'<span class="tag">Study-friendly</span>':""}${j.chk?'<span class="tag chk">Confirm details</span>':""}</div>`:""}
-   <div class="act"><button class="ghost tailor" data-u="${esc(j.u)}" type="button">Tailor CV</button><a class="btn" href="${esc(j.u)}" target="_blank" rel="noopener">Apply</a><button class="done" data-id="${esc(j.u)}" aria-pressed="${d}">${d?"Done ✓":"Done"}</button></div>
-   </article></li>`}).join(""):`<li class="empty">All done in this list. Pick another line above.</li>`;
-  const n=jobs.filter(j=>done[j.u]).length;
-  document.getElementById("count").innerHTML=`${n} <small>of ${jobs.length} applied</small>`;
-  document.getElementById("fill").style.width=(n/jobs.length*100)+"%";
+   <div class="act"><button class="ghost tailor" data-u="${esc(j.u)}" type="button">Tailor CV</button><a class="btn" href="${esc(j.u)}" target="_blank" rel="noopener">Apply</a><button class="done" data-id="${esc(j.u)}" type="button">Applied</button></div>
+   </article></li>`}).join(""):`<li class="empty">${jobs.some(j=>!done[j.u])?"You've applied for everything in this list. Pick another filter above.":"You've applied for every job here. New ones are added each morning."}</li>`;
+  const apps=Object.values(done).sort((a,b)=>(b.at||"").localeCompare(a.at||""));
+  const n=apps.length,openLeft=jobs.filter(j=>!done[j.u]).length;
+  document.getElementById("count").innerHTML=`${n} <small>applied · ${openLeft} to go</small>`;
+  document.getElementById("fill").style.width=(n+openLeft?n/(n+openLeft)*100:0)+"%";
+  document.getElementById("apn").textContent=n;
+  document.getElementById("jump").textContent=n?`See your ${n} applied job${n>1?"s":""} ↓`:"";
+  const live=new Set(jobs.map(j=>j.u));
+  document.getElementById("aplist").innerHTML=n?apps.map(a=>{const c=(CATS[a.cat]||CATS.ops).c,open=live.has(a.u);return `<li class="ap" style="--c:${c}">
+    <p class="t">${esc(a.t)}</p><p class="co">${esc(a.co||"")}</p>
+    <p class="when">Applied ${esc(fmtDay(a.at))} · ${open?'<b>Ad still open</b>':'<b class="gone">Ad now closed</b>'}</p>
+    <div class="acts">${/^https:\/\//.test(a.u)?`<a href="${esc(a.u)}" target="_blank" rel="noopener">View ad</a>`:""}<button type="button" class="undo" data-u="${esc(a.u)}">Undo</button></div></li>`}).join(""):'<li class="apempty">Nothing here yet. After you apply for a job, tap Applied and it moves here.</li>';
 }
 chips.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;filter=b.dataset.f;chips.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
-list.addEventListener("click",e=>{const b=e.target.closest(".done");if(!b)return;const id=b.dataset.id;if(done[id])delete done[id];else done[id]=1;save();render()});
-hide.addEventListener("change",render);
+list.addEventListener("click",e=>{const b=e.target.closest(".done");if(!b)return;const j=jobs.find(x=>x.u===b.dataset.id);if(!j)return;
+  done[j.u]={t:j.t,co:j.co,cat:j.cat,u:j.u,at:todayStr()};save();render();});
+document.getElementById("aplist").addEventListener("click",e=>{const b=e.target.closest(".undo");if(!b)return;delete done[b.dataset.u];save();render();});
 
 const $=id=>document.getElementById(id);
 const get=k=>{try{return localStorage.getItem(k)||""}catch(e){return""}};
@@ -277,7 +317,7 @@ $("dlg").addEventListener("click",async e=>{const b=e.target.closest("[data-copy
   const t=$(b.dataset.copy);try{await navigator.clipboard.writeText(t.value);b.textContent="Copied ✓"}catch(x){t.select();b.textContent="Select + copy"}
   setTimeout(()=>{b.textContent=b.dataset.copy==="ocv"?"Copy CV":"Copy note"},1800);});
 function isNew(j){return j.added&&checked&&(new Date(checked)-new Date(j.added))<=2*864e5&&j.added!=="2026-11-24"}
-fetch("jobs.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{jobs=d.jobs||[];checked=d.checked||"";
+fetch("jobs.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{jobs=d.jobs||[];checked=d.checked||"";migrate();
   document.getElementById("total").textContent=jobs.length;
   document.getElementById("checked").textContent=checked?new Date(checked+"T12:00:00").toLocaleDateString("en-ZA",{day:"numeric",month:"long",year:"numeric"}):"";
   render();}).catch(()=>{list.innerHTML='<li class="empty">Couldn\'t load the job list. Refresh the page.</li>'});
