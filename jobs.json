@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-27",
+ "checked": "2026-11-28",
  "jobs": [
   {
    "cat": "fin",
@@ -722,19 +722,6 @@
    "added": "2026-11-24"
   },
   {
-   "cat": "ops",
-   "t": "Senior Jira Administrator",
-   "co": "Canonical",
-   "h": "UK hours (~11:00–19:30 SAST)",
-   "p": "See ad",
-   "m": 60,
-   "comm": 1,
-   "why": "Admin and operations coordination you've done remotely for 3+ years. Mentions Microsoft 365.",
-   "u": "https://himalayas.app/companies/canonical/jobs/senior-jira-administrator?utm_source=api",
-   "added": "2026-11-25",
-   "fails": 2
-  },
-  {
    "cat": "cs",
    "t": "AP - Mortgage Administrator & Client Support | Remote South Africa",
    "co": "D2B",
@@ -1243,115 +1230,128 @@
   },
   {
    "cat": "sales",
-   "t": "Inbound Sales Agent",
-   "co": "Remote Recruitment (UK employer)",
-   "h": "11:00–19:00 SAST",
-   "p": "R23,000–R25,000",
-   "m": 44,
-   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more.",
-   "u": "https://apply.workable.com/remote-recruitment/j/F9F02C7F56/",
-   "added": "2026-11-27"
-  },
-  {
-   "cat": "sales",
-   "t": "Lead Generation Specialist",
-   "co": "Remote Recruitment (UK employer)",
-   "h": "11:00–19:00 SAST",
-   "p": "R29,000–R32,000",
-   "m": 44,
-   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more.",
-   "u": "https://apply.workable.com/remote-recruitment/j/AF282D69D3/",
-   "added": "2026-11-27"
-  },
-  {
-   "cat": "sales",
-   "t": "Sales Representative",
-   "co": "Remote Recruitment (UK employer)",
-   "h": "11:00–19:00 SAST",
-   "p": "R23,000–R25,000",
-   "m": 44,
-   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more.",
-   "u": "https://apply.workable.com/remote-recruitment/j/42A995C932/",
-   "added": "2026-11-27"
-  },
-  {
-   "cat": "sales",
-   "t": "Telesales Representative",
-   "co": "Remote Recruitment (UK employer)",
-   "h": "11:00–19:00 SAST",
-   "p": "R23,000–R25,000",
-   "m": 44,
-   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more.",
-   "u": "https://apply.workable.com/remote-recruitment/j/70ED7A1C81/",
-   "added": "2026-11-27"
-  },
-  {
-   "cat": "sales",
-   "t": "Business Development Executive - IT Recruitment",
-   "co": "Huzzle",
-   "h": "UK hours (~11:00–19:30 SAST)",
-   "p": "£15,000",
-   "m": 44,
-   "comm": 1,
-   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more.",
-   "u": "https://apply.workable.com/huzzle/j/C315AFDE58/",
-   "added": "2026-11-27"
-  },
-  {
-   "cat": "sales",
-   "t": "Business Development Representative - Investment Management Industry",
+   "t": "Business Development Representative - Logistics (UK Market)",
    "co": "Huzzle",
    "h": "UK hours (~11:00–19:30 SAST)",
    "p": "See ad",
    "m": 44,
    "comm": 1,
    "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more.",
-   "u": "https://apply.workable.com/huzzle/j/57C9C2BCD7/",
-   "added": "2026-11-27"
+   "u": "https://apply.workable.com/huzzle/j/BD5F21D542/",
+   "added": "2026-11-28"
   },
   {
    "cat": "sales",
-   "t": "Sales Development Representative (UK Market)",
+   "t": "Founding Sales Development Representative",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 44,
+   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more.",
+   "u": "https://apply.workable.com/huzzle/j/56B1A3F97F/",
+   "added": "2026-11-28"
+  },
+  {
+   "cat": "sales",
+   "t": "Remote Appointment Setter",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 44,
+   "comm": 1,
+   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more.",
+   "u": "https://apply.workable.com/huzzle/j/3F6BBA19E1/",
+   "added": "2026-11-28"
+  },
+  {
+   "cat": "sales",
+   "t": "Sales Development Representative (EdTech)",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 44,
+   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more.",
+   "u": "https://apply.workable.com/huzzle/j/6247AA35BB/",
+   "added": "2026-11-28"
+  },
+  {
+   "cat": "sales",
+   "t": "Sales Development Representative (Insurance Tech)",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "£200",
+   "m": 44,
+   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more.",
+   "u": "https://apply.workable.com/huzzle/j/4727DD385A/",
+   "added": "2026-11-28"
+  },
+  {
+   "cat": "sales",
+   "t": "Sales Development Representative (SDR) - Logistics",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 44,
+   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more.",
+   "u": "https://apply.workable.com/huzzle/j/CD93EB3854/",
+   "added": "2026-11-28"
+  },
+  {
+   "cat": "sales",
+   "t": "Sales Development Representative - B2B Insurance",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "£200",
+   "m": 44,
+   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more.",
+   "u": "https://apply.workable.com/huzzle/j/89ADF7B681/",
+   "added": "2026-11-28"
+  },
+  {
+   "cat": "sales",
+   "t": "Sales Development Representative - Renewable Energy",
+   "co": "Huzzle",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "See ad",
+   "m": 44,
+   "comm": 1,
+   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more.",
+   "u": "https://apply.workable.com/huzzle/j/E0F3317C43/",
+   "added": "2026-11-28"
+  },
+  {
+   "cat": "sales",
+   "t": "B2B Sales Executive",
    "co": "D2B",
-   "h": "09:30–18:30 SAST",
-   "p": "See ad",
+   "h": "UK hours (~11:00–19:30 SAST)",
+   "p": "£1,100",
    "m": 44,
    "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more.",
-   "u": "https://apply.workable.com/d2b-1/j/93248C7417/",
-   "added": "2026-11-27"
+   "u": "https://apply.workable.com/d2b-1/j/7A119FA2DE/",
+   "added": "2026-11-28"
   },
   {
    "cat": "sales",
-   "t": "Business Development & Research Specialist | UK hours",
-   "co": "VirtuHire",
+   "t": "Sales and Customer Relationship Executive",
+   "co": "D2B",
    "h": "UK hours (~11:00–19:30 SAST)",
-   "p": "See ad",
+   "p": "£2,500",
    "m": 44,
    "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more.",
-   "u": "https://apply.workable.com/virtuhire/j/8A90257367/",
-   "added": "2026-11-27"
+   "u": "https://apply.workable.com/d2b-1/j/4A9A6084BA/",
+   "added": "2026-11-28"
   },
   {
    "cat": "sales",
-   "t": "Lead Generator",
-   "co": "VirtuHire",
+   "t": "Sales Development Representative (B2B, Logistics) - South Africa",
+   "co": "D2B",
    "h": "UK hours (~11:00–19:30 SAST)",
    "p": "See ad",
    "m": 44,
+   "comm": 1,
    "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more.",
-   "u": "https://apply.workable.com/virtuhire/j/5981D24565/",
-   "added": "2026-11-27"
-  },
-  {
-   "cat": "sales",
-   "t": "Sales & Customer Service Agent | Fully Remote - UK hours",
-   "co": "VirtuHire",
-   "h": "UK hours (~11:00–19:30 SAST)",
-   "p": "See ad",
-   "m": 44,
-   "why": "Sales and appointment setting. Your client coordination helps, and there's room to earn more.",
-   "u": "https://apply.workable.com/virtuhire/j/C5E766FBE2/",
-   "added": "2026-11-27"
+   "u": "https://apply.workable.com/d2b-1/j/1867EC070B/",
+   "added": "2026-11-28"
   }
  ]
 }
